@@ -1,0 +1,96 @@
+.addTaskContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 60px;
+
+    input {
+        width: 280px;
+        height: 30px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border-color: lightgray;
+    }
+
+    textarea {
+        resize: none;
+        width: 280px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border-color: lightgray;
+    }
+
+    select {
+        width: 285px;
+        height: 30px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border-color: lightgray;
+    }
+
+    .addTaskSecondSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+
+        .prio {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            width: 33%;
+            height: 30px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            img {
+                object-fit: cover;
+                width: 15px;
+                margin-left: 5px;
+            }
+        }
+
+        .prioMargin {
+            margin-left: 15px;
+        }
+    }
+}
+
+.addTaskBtn {
+    display: flex;
+    justify-content: end;
+    margin-right: 60px;
+
+    .taskBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 30px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .createTaskBtn {
+        color: white;
+        margin-left: 20px;
+        background-color: rgb(19, 20, 61);
+    }
+}
+
+.width {
+    max-width: 800px;
+}

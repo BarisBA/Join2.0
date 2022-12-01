@@ -1,0 +1,106 @@
+.summaryHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 40px;
+
+    .title {
+        padding-right: 15px;
+    }
+
+    .summaryText {
+        font-size: 20px;
+        padding-left: 15px;
+        border-left: 2px solid rgb(52, 151, 218);
+    }
+}
+
+.summaryContainer {
+    display: flex;
+    flex-direction: column;
+
+    .textMargin {
+        margin-top: -20px;
+        font-size: 17.5px;
+    }
+
+    .summaryContent {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    img {
+        object-fit: cover;
+        width: 45px;
+    }
+
+    .taskNumber {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 16px;
+        width: 100px;
+        height: 90px;
+    }
+
+    .urgent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 16px;
+        width: 400px;
+        height: 90px;
+        margin-top: 20px;
+
+
+        .urgentFirstContent {
+            display: flex;
+            align-items: center;
+            padding-right: 25px;
+        }
+
+        .urgentSecondContent {
+            text-align: center;
+            padding-left: 25px;
+            border-left: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .urgentImg {
+            margin-right: 10px;
+        }
+
+        .urgentText {
+            text-align: center;
+            padding-right: 25px;
+            font-size: 17.5px;
+        }
+    }
+
+    .todos {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+
+        .todosChild {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 16px;
+            width: 150px;
+            height: 90px;
+        }
+    }
+}
+
+.greeting {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+}

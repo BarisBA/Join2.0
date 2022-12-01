@@ -1,0 +1,23 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer-content>
+        <div class="sideNav">
+            <div class="joinLogo">
+                <img src="assets/img/join-logo.png">
+            </div>
+            <div class="sideNavMenu">
+                <div class="sideNavMenuChild">
+                    <div class="menu" *ngFor="let menuName of menuNames; let i = index">
+                        <img src="assets/img/{{ sideNavImg[i] }}-logo.png">
+                        <p (click)="openComponent(i)" class="margin-left">{{ menuNames[i] }} </p>
+                    </div>
+                </div>
+                <div class="sideNavMenuChild">
+                    <div class="menu">
+                        <img src="assets/img/help-logo.png">
+                        <p (click)="openLegalNotice()" class="margin-left">Legal Notice </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "join-32bc7": {
+      "hosting": {
+        "join2": [
+          "join-32bc7"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "join-32bc7"
+  }
+}

@@ -1,0 +1,41 @@
+.example-container {
+    width: 200px;
+    height: 100vh;
+    color: white;
+    background-color: rgb(19, 20, 61);
+
+    .sideNav {
+        img {
+            object-fit: cover;
+            width: 20px;
+        }
+        .joinLogo {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+    
+            img {
+                object-fit: cover;
+                width: 64px;
+            }
+        }
+
+        .sideNavMenu {
+            margin-left: 50px;
+            margin-top: 40px;
+
+            .sideNavMenuChild {
+                margin-bottom: 65px;
+            }
+
+            .menu {
+                display: flex;
+                align-items: center;
+                
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+  }

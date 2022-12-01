@@ -1,1 +1,57 @@
-<p>summary works!</p>
+<div class="margin">
+    <div class="summaryHeader">
+        <div class="title">
+            <h1>Summary</h1>
+        </div>
+        <div>
+            <p class="summaryText">Everything in a nutshell!</p>
+        </div>
+    </div>
+
+    <div style="display: flex;">
+        <div class="summaryContainer">
+            <div class="summaryContent" >
+                <div class="taskNumber" *ngFor="let task of tasks; let i = index" >
+                    <h1>5</h1>
+                    <p class="textMargin">{{ tasks[i] }}</p>
+                </div>
+            </div>
+
+            <div class="urgent">
+                <div class="urgentFirstContent">
+                    <div class="urgentImg">
+                        <img src="assets/img/urgent-logo.png">
+                    </div>
+                    <div class="urgentText">
+                        <h1>4</h1>
+                        <p class="textMargin">Urgent</p>
+                    </div>
+                </div>
+                <div class="urgentSecondContent">
+                    <b><p>October 16, 2022</p></b>
+                    Upcoming Deadline
+                </div>
+            </div>
+            
+            <div class="todos">
+                <div class="todosChild" *ngFor="let todo of todos; let i = index">
+                    <div class="urgentImg">
+                        <img src="assets/img/todo-logo.png">
+                    </div>
+                    <div>
+                        <h1>1</h1>
+                        <p class="textMargin">{{ todos[i] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="greeting">
+            <div>
+                <h1>Good Morning, <br>
+               Name</h1>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,1 +1,64 @@
-<p>add-task works!</p>
+<div class="margin width">
+    <div>
+        <h1>Add Task</h1>
+    </div>
+    <div class="addTaskContainer">
+        <div>
+            <div>
+                <div>Title</div>
+                <input type="text" placeholder="Enter a title">
+            </div>
+            <div>
+                <div>Description</div>
+                <textarea placeholder="Enter a description"></textarea>
+            </div>
+            <div>
+                <div>Category</div>
+                <select>
+                    <option>Marketing</option>
+                    <option>Development</option>
+                    <option>Design</option>
+                </select>
+            </div>
+            <div>
+                <div>Assigned to</div>
+                <select>
+                    <option>Baris</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="addTaskSecondSection">
+            <div>
+                <div>
+                    <div>Due date</div>
+                    <input type="date">
+                </div>
+                <div style="width: 280px;">
+                    <div>Prio</div>
+                    <div style="display: flex;">
+                        <div class="prio">
+                            Urgent <img src="assets/img/prio-urgent-logo.png">
+                        </div>
+                        <div class="prio prioMargin">
+                            Medium<img src="assets/img/prio-medium-logo.png">
+                        </div>
+                        <div class="prio prioMargin">
+                            Low<img src="assets/img/prio-low-logo.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="addTaskBtn">
+        <button class="taskBtn">
+            <p> Clear</p>
+            <img src="assets/img/cancel.png">
+            </button>
+        <button class="taskBtn createTaskBtn">
+            <p>Create Task </p>
+            <img src="assets/img/create.png">
+            </button>
+    </div>
+</div>

@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
+  tasks = ['Tasks in Board','Tasks in  Progress','Awaiting Feedback']
+  todos = ['To-do', 'Done']
+
   constructor() { }
 
   ngOnInit(): void {
