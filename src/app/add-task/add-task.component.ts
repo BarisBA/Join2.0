@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Task } from 'src/assets/models/task.class';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-add-task',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-task.component.scss']
 })
 export class AddTaskComponent implements OnInit {
+  task = new Task();
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
+  }
+
+  addTask() {
+    this.firestore
+    .collection('tasks')
+    .add(this.task.toJson())
+    .then((result: any) => {
+      console.log('task added', result);
+    })
   }
 
 }

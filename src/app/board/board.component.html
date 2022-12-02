@@ -3,46 +3,57 @@
         <h1>Board</h1>
     </div>
 
-    <div >
+    <div>
         <div class="example-container">
             <p>To do</p>
-            
-            <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[inProgressList,awaitingFeedbackList,doneList]" class="example-list" (cdkDropListDropped)="drop($event)">
-                <div class="example-box" cdkDrag>
-                   <div class="category">Sales</div>
-                   <div class="title"> <b> Develop Strategy </b></div>
-                   <div class="description">Talk to stuff about how to learn a few</div>
-                   <div class="assignedTo">assignedTo <img src="assets/img/prio-urgent-logo.png"></div>
+
+            <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="tasks"
+                [cdkDropListConnectedTo]="[inProgressList,awaitingFeedbackList,doneList]" class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div *ngFor="let task of tasks; let i = index" class="example-box" cdkDrag>
+                    <div class="category">{{ task.category }}</div>
+                    <div class="title"> <b> {{ task.title }} </b></div>
+                    <div class="description">{{ task.description }}</div>
+                    <div class="assignedTo">{{ task.assigned }} <img src="assets/img/prio-urgent-logo.png"></div>
                 </div>
             </div>
         </div>
 
         <div class="example-container">
             <p>In progress</p>
-            
-            <div cdkDropList #inProgressList="cdkDropList" [cdkDropListData]="inProgress" [cdkDropListConnectedTo]="[todoList,awaitingFeedbackList,doneList]" class="example-list" (cdkDropListDropped)="drop($event)">
-                <div class="example-box" cdkDrag>
-                    
+
+            <div cdkDropList #inProgressList="cdkDropList" [cdkDropListData]="inProgress"
+                [cdkDropListConnectedTo]="[todoList,awaitingFeedbackList,doneList]" class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div *ngFor="let task of inProgress; let i = index" class="example-box" cdkDrag>
+                    <div class="category">{{ task.category }}</div>
+                    <div class="title"> <b> {{ task.title }} </b></div>
+                    <div class="description">{{ task.description }}</div>
+                    <div class="assignedTo">{{ task.assigned }} <img src="assets/img/prio-low-logo.png"></div>
                 </div>
             </div>
         </div>
 
         <div class="example-container">
             <p>Awaiting Feedback</p>
-            
-            <div cdkDropList #awaitingFeedbackList="cdkDropList" [cdkDropListData]="awaitingFeedback" [cdkDropListConnectedTo]="[todoList,inProgressList,doneList]" class="example-list" (cdkDropListDropped)="drop($event)">
-                <div class="example-box" cdkDrag>
-                    
+
+            <div cdkDropList #awaitingFeedbackList="cdkDropList" [cdkDropListData]="awaitingFeedback"
+                [cdkDropListConnectedTo]="[todoList,inProgressList,doneList]" class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div *ngFor="let item of awaitingFeedback" class="example-box" cdkDrag>
+
                 </div>
             </div>
         </div>
 
         <div class="example-container">
             <p>Done</p>
-            
-            <div cdkDropList  #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList,inProgressList,awaitingFeedbackList]" class="example-list" (cdkDropListDropped)="drop($event)">
-                <div class="example-box" cdkDrag>
-                    
+
+            <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done"
+                [cdkDropListConnectedTo]="[todoList,inProgressList,awaitingFeedbackList]" class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div *ngFor="let item of done" class="example-box" cdkDrag>
+                    <span>{{ item }}</span>
                 </div>
             </div>
         </div>
