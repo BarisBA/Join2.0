@@ -10,7 +10,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class BoardComponent implements OnInit {
 
-  tasks = [];
+  todo = [];
   inProgress = [];
   awaitingFeedback = [];
   done = [];
@@ -21,25 +21,25 @@ export class BoardComponent implements OnInit {
 
   ngOnInit(): void {
     this.firestore
-      .collection('tasks')
+      .collection('tasks', ref => ref.where('list', '==', 'todo'))
       .valueChanges({ idField: 'id' })
       .subscribe((changes: any) => {
-        this.tasks = changes;
+        this.todo = changes;
       });
       this.firestore
-      .collection('inProgress')
+      .collection('tasks', ref => ref.where('list', '==', 'inProgress'))
       .valueChanges({ idField: 'id' })
       .subscribe((changes: any) => {
         this.inProgress = changes;
       });
       this.firestore
-      .collection('awaitingFeedback')
+      .collection('tasks', ref => ref.where('list', '==', 'awaitingFeedback'))
       .valueChanges({ idField: 'id' })
       .subscribe((changes: any) => {
         this.awaitingFeedback = changes;
       });
       this.firestore
-      .collection('done')
+      .collection('tasks', ref => ref.where('list', '==', 'done'))
       .valueChanges({ idField: 'id' })
       .subscribe((changes: any) => {
         this.done = changes;
@@ -47,8 +47,11 @@ export class BoardComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
+    console.log(event);
+    
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      
     } 
     else {
       transferArrayItem(
@@ -58,5 +61,6 @@ export class BoardComponent implements OnInit {
         event.currentIndex,
       );
     }
+    // firestore.collection('tasks').doc(task.id).update((tasks.list: 'done'))
   }
 }
